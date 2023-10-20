@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Snake Game</title>
+</head>
+<body>
+    <script>
+        const theme = localStorage.getItem('dark') || 'off';
+            document.documentElement.dataset.theme = theme;
+
+    </script>
+    <label class="switch">
+        <input type="checkbox" class="checkbox">
+        <span class="slider round"></span>
+    </label>
+    <div class="main">
+        <form >
+            <label>Enter Your Name</label>
+            <input type="text" class="input" required>
+            <input type="submit" class="submit" formaction="game.html">
+        </form>
+    </div>
+    <script>
+        let submitBtn = document.querySelector(".submit");
+        submitBtn.onclick = function () {
+        let input = document.querySelectorAll("input");
+        user = input[1].value;
+        localStorage.setItem("user",`${user}`);
+        }
+    </script>
+    <script src="js/index.js" ></script>
+</body>
+</html>
